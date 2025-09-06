@@ -1,5 +1,5 @@
 package javaPackage;
-class Thread1 extends Thread{
+class Thread1 implements Runnable{
     int i = 0;
     @Override
     public void run(){
@@ -23,7 +23,8 @@ public class ThreadsInJava {
     public static void main(String[] args) {
        Thread1 thread1 = new Thread1();
        Thread2 thread2 = new Thread2();
-       thread1.start();
+       Thread t = new Thread(thread1);
+       t.start();
        thread2.start();
     }
 }
